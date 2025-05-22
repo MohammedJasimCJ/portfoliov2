@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="light"> <head>
+<html lang="en" class="light">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jasim's Portfolio</title>
+    <title>My Professional Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
@@ -13,6 +14,11 @@
             background-color: #f8fafc; /* Light gray background */
             color: #334155; /* Darker gray text */
             transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         /* Apply Montserrat to the logo text */
@@ -22,7 +28,7 @@
 
         /* Dark mode specific styles */
         html.dark body {
-            background-color: #000000; /* More blackish background */
+            background-color: #000000; /* Deep black background */
             color: #e2e8f0; /* Light text */
         }
 
@@ -72,20 +78,21 @@
             background-color: #2a2a2a; /* Darker hover for nav links */
         }
 
-        html.dark .hover\:text-indigo-600:hover {
-            color: #63b3ed; /* Lighter blue for hover */
+        /* Dark mode accent colors (teal theme) */
+        html.dark .hover\:text-teal-600:hover {
+            color: #5eead4; /* Lighter teal for hover */
         }
 
         html.dark .section-heading::after {
-            background-color: #63b3ed; /* New accent color for dark mode underline */
+            background-color: #2dd4bf; /* Accent color for dark mode underline */
         }
 
         html.dark .btn-primary {
-            background: linear-gradient(to right, #63b3ed, #4299e1); /* Dark mode gradient */
-            box-shadow: 0 4px 15px rgba(66, 153, 225, 0.4);
+            background: linear-gradient(to right, #2dd4bf, #14b8a6); /* Dark mode gradient - teal */
+            box-shadow: 0 4px 15px rgba(45, 212, 191, 0.4);
         }
         html.dark .btn-primary:hover {
-            box-shadow: 0 6px 20px rgba(66, 153, 225, 0.6);
+            box-shadow: 0 6px 20px rgba(45, 212, 191, 0.6);
         }
 
         html.dark .project-card {
@@ -97,24 +104,24 @@
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
-        html.dark .text-sky-600 { /* For project card links */
-            color: #63b3ed;
+        html.dark .text-teal-600 { /* For project card links */
+            color: #2dd4bf;
         }
-        html.dark .hover\:text-sky-800:hover {
-            color: #90cdf4;
+        html.dark .hover\:text-teal-800:hover {
+            color: #0f766e;
         }
 
-        html.dark .border-sky-200 { /* For experience timeline */
-            border-color: #4299e1;
+        html.dark .border-teal-200 { /* For education timeline */
+            border-color: #5eead4;
         }
-        html.dark .bg-sky-500 {
-            background-color: #63b3ed;
-        }
-        html.dark .bg-teal-500 { /* For education dot */
-            background-color: #4fd1c5;
+        html.dark .bg-teal-500 {
+            background-color: #2dd4bf;
         }
         html.dark .bg-purple-500 { /* For upskilling dot */
             background-color: #a78bfa;
+        }
+        html.dark .bg-green-600 { /* For Node.js icon in skills */
+            color: #34d399;
         }
 
 
@@ -136,40 +143,24 @@
             bottom: 0;
             width: 80px;
             height: 5px;
-            background-color: #0ea5e9; /* Sky blue for light mode */
+            background-color: #14b8a6; /* Teal for light mode */
             border-radius: 9999px;
             transition: background-color 0.3s ease;
         }
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Fade-in animation for sections */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* Custom button styling for better appearance */
         .btn-primary {
-            background: linear-gradient(to right, #0ea5e9, #3b82f6); /* Sky blue to blue gradient */
+            background: linear-gradient(to right, #14b8a6, #0d9488); /* Teal to darker teal gradient */
             color: white;
             font-weight: 600;
             padding: 0.75rem 2rem;
             border-radius: 9999px;
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
             transition: all 0.3s ease-in-out;
-            cursor: pointer; /* Added cursor pointer */
+            cursor: pointer;
         }
         .btn-primary:hover {
             transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
+            box-shadow: 0 6px 20px rgba(20, 184, 166, 0.6);
         }
 
         /* Project card specific styling */
@@ -204,14 +195,14 @@
             justify-content: center;
         }
         #darkModeToggle:hover {
-            color: #0ea5e9; /* Sky 500 */
+            color: #14b8a6; /* Teal 500 */
             background-color: #e2e8f0; /* Slate 200 */
         }
         html.dark #darkModeToggle {
             color: #cbd5e0; /* Light gray for dark mode */
         }
         html.dark #darkModeToggle:hover {
-            color: #63b3ed; /* Lighter blue for dark mode hover */
+            color: #2dd4bf; /* Lighter teal for dark mode hover */
             background-color: #2a2a2a; /* Darker background for dark mode hover */
         }
 
@@ -252,7 +243,7 @@
         }
 
         .hamburger-icon {
-            display: none; /* Hidden by default, shown on small screens */
+            display: flex; /* Show by default on small screens */
             flex-direction: column;
             justify-content: space-between;
             width: 30px;
@@ -260,6 +251,25 @@
             cursor: pointer;
             z-index: 60; /* Above other content */
         }
+        .main-nav-links {
+            display: none; /* Hidden by default on small screens */
+        }
+
+        /* Media query for desktop */
+        @media (min-width: 768px) { /* md breakpoint */
+            .hamburger-icon {
+                display: none; /* Hide hamburger on desktop */
+            }
+            .main-nav-links {
+                display: flex; /* Show desktop nav links on desktop */
+            }
+            .nav-toggle-group {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem; /* Adjust spacing for desktop nav items */
+            }
+        }
+
 
         .hamburger-icon span {
             display: block;
@@ -326,7 +336,7 @@
             color: #e2e8f0; /* Light text in dark mode */
         }
         .mobile-nav-menu a:hover {
-            color: #0ea5e9; /* Sky blue accent */
+            color: #14b8a6; /* Teal accent */
         }
 
         /* Animation for skill cards and timeline items */
@@ -342,36 +352,21 @@
                 transform: translateY(0);
             }
         }
-
-        /* Responsive adjustments for navigation */
-        @media (max-width: 768px) { /* Adjust breakpoint as needed */
-            .main-nav-links {
-                display: none; /* Hide desktop nav links on small screens */
-            }
-            .hamburger-icon {
-                display: flex; /* Show hamburger icon on small screens */
-            }
-            .nav-toggle-group {
-                display: flex;
-                align-items: center;
-                gap: 1rem; /* Space between toggle and hamburger */
-            }
-        }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-extrabold text-sky-700 rounded-md p-2 hover:bg-sky-50 transition duration-300 logo-font">Jasim's Porfolio</a>
+            <a href="#hero" class="text-2xl font-extrabold text-teal-700 rounded-md p-2 hover:bg-teal-50 transition duration-300 logo-font">My Portfolio</a>
 
             <div class="nav-toggle-group flex items-center">
-                <ul class="flex space-x-6 items-center main-nav-links">
-                    <li><a href="#about" class="text-gray-700 hover:text-sky-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">About</a></li>
-                    <li><a href="#skills" class="text-gray-700 hover:text-sky-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Skills</a></li>
-                    <li><a href="#experience" class="text-gray-700 hover:text-sky-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Experience</a></li>
-                    <li><a href="#projects" class="text-gray-700 hover:text-sky-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Projects</a></li>
-                    <li><a href="#contact" class="text-gray-700 hover:text-sky-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Contact</a></li>
+                <ul class="hidden md:flex space-x-6 items-center main-nav-links">
+                    <li><a href="#about" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">About</a></li>
+                    <li><a href="#education" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Education</a></li>
+                    <li><a href="#skills" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Skills</a></li>
+                    <li><a href="#projects" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Projects</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Contact</a></li>
                 </ul>
 
                 <button id="darkModeToggle" aria-label="Toggle dark mode" class="ml-4 md:ml-0">
@@ -379,7 +374,7 @@
                 </button>
 
                 <input type="checkbox" id="mobile-menu-toggle" class="hidden">
-                <label for="mobile-menu-toggle" class="hamburger-icon ml-4 md:hidden">
+                <label for="mobile-menu-toggle" class="hamburger-icon ml-4">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -389,21 +384,21 @@
 
         <ul class="mobile-nav-menu">
             <li><a href="#about" class="block" onclick="document.getElementById('mobile-menu-toggle').checked = false;">About</a></li>
+            <li><a href="#education" class="block" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Education</a></li>
             <li><a href="#skills" class="block" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Skills</a></li>
-            <li><a href="#experience" class="block" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Experience</a></li>
             <li><a href="#projects" class="block" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Projects</a></li>
             <li><a href="#contact" class="block" onclick="document.getElementById('mobile-menu-toggle').checked = false;">Contact</a></li>
         </ul>
     </header>
 
-    <section id="hero" class="bg-gradient-to-br from-sky-600 to-blue-800 text-white py-20 md:py-32 flex items-center justify-center min-h-screen-75 fade-in-section">
+    <section id="hero" class="bg-gradient-to-br from-teal-700 to-teal-900 text-white py-20 md:py-32 flex items-center justify-center min-h-screen fade-in-section">
         <div class="container mx-auto px-6 text-center md:flex md:items-center md:justify-center md:space-x-16">
             <div class="mb-10 md:mb-0 md:w-1/3 flex justify-center">
-                <img src="https://placehold.co/300x300/0ea5e9/ffffff?text=Your+Image" alt="Your Profile Picture" class="rounded-full shadow-2xl border-4 border-white object-cover w-56 h-56 md:w-72 md:h-72 transform hover:scale-110 transition duration-500 ease-in-out cursor-pointer">
+                <img src=./images/PIC.jpeg  alt="Your Profile Picture" class="rounded-full shadow-2xl border-4 border-white object-cover w-full max-w-[200px] sm:max-w-[300px] md:max-w-[300px] h-auto transform hover:scale-110 transition duration-500 ease-in-out cursor-pointer">
             </div>
             <div class="md:w-2/3 text-center md:text-left">
                 <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 drop-shadow-lg animate-fade-in-up">Hi, I'm <span class="text-yellow-300">Jasim</span></h1>
-                <p class="text-xl md:text-2xl mb-8 opacity-95 animate-fade-in-up delay-200">A passionate MERN Stack Developer building robust and scalable web applications.</p>
+                <p class="text-xl md:text-2xl mb-8 opacity-95 animate-fade-in-up delay-200">A passionate developer building robust and scalable web applications.</p>
                 <a href="#projects" class="btn-primary inline-block">View My Work <i class="fas fa-arrow-right ml-2"></i></a>
             </div>
         </div>
@@ -413,85 +408,40 @@
         <div class="container mx-auto px-6 max-w-5xl">
             <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">About Me</h2>
             <div class="text-lg leading-relaxed text-gray-700 space-y-6">
-                <p>Hello! I'm a full-stack developer with a strong focus on the MERN (MongoDB, Express.js, React, Node.js) stack, dedicated to crafting efficient, scalable, and user-friendly web applications. My expertise lies in transforming complex requirements into elegant code solutions, ensuring a seamless experience from front-end interfaces to robust back-end systems.</p>
-                <p>My journey into web development began with a deep curiosity for how digital products are built and a desire to create impactful solutions. Over the years, I've gained hands-on experience in designing responsive UIs with React, managing data with MongoDB, and developing high-performance APIs using Node.js and Express. I am proficient in modern JavaScript, asynchronous programming, and various development tools.</p>
+                <p>Hello! I'm a dedicated developer with a strong focus on creating efficient, scalable, and user-friendly web applications. My expertise lies in transforming complex requirements into elegant code solutions, ensuring a seamless experience from front-end interfaces to robust back-end systems.</p>
+                <p>My journey into web development began with a deep curiosity for how digital products are built and a desire to create impactful solutions. I am proficient in modern JavaScript and various development tools.</p>
                 <p>I thrive in dynamic environments and am constantly seeking opportunities to expand my knowledge and skills. Whether it's learning new frameworks, exploring advanced architectural patterns, or contributing to open-source projects, I am committed to continuous growth. Outside of coding, I enjoy problem-solving, reading tech blogs, and staying updated with the latest industry trends.</p>
                 <p>I'm excited about the prospect of contributing my skills to innovative projects and collaborating with passionate teams. Please explore my portfolio to see examples of my work and feel free to connect!</p>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-16 md:py-24 bg-gray-50 fade-in-section">
+    <section id="education" class="py-16 md:py-24 bg-gray-50 fade-in-section">
         <div class="container mx-auto px-6 max-w-5xl">
-            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Skills</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 text-center" id="skills-grid">
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0s;">
-                    <i class="fab fa-react text-5xl text-sky-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">React.js</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.1s;">
-                    <i class="fab fa-node-js text-5xl text-emerald-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">Node.js</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.2s;">
-                    <i class="fas fa-database text-5xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">MongoDB</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.3s;">
-                    <i class="fab fa-js-square text-5xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">JavaScript (ES6+)</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.4s;">
-                    <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">HTML5</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.5s;">
-                    <i class="fab fa-css3-alt text-5xl text-blue-400 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">CSS3 & Tailwind CSS</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.6s;">
-                    <i class="fab fa-git-alt text-5xl text-red-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">Git & GitHub</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.7s;">
-                    <i class="fas fa-server text-5xl text-gray-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">RESTful APIs</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Education</h2>
 
-    <section id="experience" class="py-16 md:py-24 bg-white fade-in-section">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">Experience & Education</h2>
-
-            <div class="relative border-l-4 border-sky-200 pl-8 ml-4" id="timeline-container">
+            <div class="relative border-l-4 border-teal-200 pl-8 ml-4" id="education-timeline-container">
                 <div class="mb-12 relative animate-item-fade-in" style="animation-delay: 0s;">
                     <div class="absolute w-4 h-4 bg-purple-500 rounded-full -left-10 top-1.5 transform -translate-x-1/2"></div>
                     <p class="text-sm text-gray-500 mb-1">2023 - Present</p>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Upskilling in MERN Stack & PHP</h3>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Upskilling in PHP, React, MERN Stack, AI</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Dedicated to intensive self-study and practical application, mastering JavaScript, React, and completing a comprehensive MERN stack curriculum. Also gained proficiency in PHP.
+                        Dedicated to intensive self-study and practical application, mastering PHP, React, MERN stack technologies, and foundational AI concepts.
                     </p>
-                    <ul class="list-disc list-inside text-gray-600 mt-2 text-sm">
-                        <li>Deep dived into advanced JavaScript concepts and ES6+.</li>
-                        <li>Built multiple projects showcasing React, Node.js, Express.js, and MongoDB integration.</li>
-                        <li>Explored server-side development with PHP for diverse web solutions.</li>
-                    </ul>
                 </div>
 
                 <div class="mb-12 relative animate-item-fade-in" style="animation-delay: 0.2s;">
                     <div class="absolute w-4 h-4 bg-teal-500 rounded-full -left-10 top-1.5 transform -translate-x-1/2"></div>
-                    <p class="text-sm text-gray-500 mb-1">2019 - 2023 (Pass Out)</p>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Bachelor of Technology | KMEA College of Arts and Science</h3>
+                    <p class="text-sm text-gray-500 mb-1">2020 - 2023 (Pass Out)</p>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Bachelor of Computer Applications (BCA) | KMEA College of Arts and Science, Kuzhivelipady</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Completed Bachelor of Technology, gaining a strong foundation in computer science principles, software development methodologies, and problem-solving.
+                        Completed BCA, gaining a strong foundation in computer science principles, software development, and problem-solving.
                     </p>
                 </div>
 
                 <div class="mb-4 relative animate-item-fade-in" style="animation-delay: 0.4s;">
                     <div class="absolute w-4 h-4 bg-teal-500 rounded-full -left-10 top-1.5 transform -translate-x-1/2"></div>
-                    <p class="text-sm text-gray-500 mb-1">2019</p>
+                    <p class="text-sm text-gray-500 mb-1">2020</p>
                     <h3 class="text-2xl font-bold text-gray-900 mb-2">12th Grade | Model Technical Higher Secondary School, Kaloor</h3>
                     <p class="text-gray-700 leading-relaxed">
                         Completed higher secondary education with a focus on technical subjects, building a strong academic base.
@@ -501,69 +451,103 @@
         </div>
     </section>
 
-    <section id="projects" class="py-16 md:py-24 bg-gray-50 fade-in-section">
+    <section id="skills" class="py-16 md:py-24 bg-white fade-in-section">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 text-center" id="skills-grid">
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0s;">
+                    <i class="fab fa-react text-5xl text-teal-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">React.js</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.1s;">
+                    <i class="fab fa-node-js text-5xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Node.js</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.2s;">
+                    <i class="fas fa-database text-5xl text-teal-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Databases</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.3s;">
+                    <i class="fab fa-js-square text-5xl text-yellow-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">JavaScript</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.4s;">
+                    <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">HTML5</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.5s;">
+                    <i class="fab fa-css3-alt text-5xl text-teal-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">CSS3 & Tailwind</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.6s;">
+                    <i class="fab fa-git-alt text-5xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">Git & GitHub</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.7s;">
+                    <i class="fas fa-server text-5xl text-gray-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-800">API Development</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 md:py-24 bg-white fade-in-section">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My MERN Stack Projects</h2>
+            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
                 <div class="project-card">
-                    <img src="https://placehold.co/600x400/0ea5e9/ffffff?text=E-commerce+App" alt="E-commerce Application" class="w-full h-52 object-cover rounded-t-xl">
+                    <img src="https://placehold.co/600x400/14b8a6/ffffff?text=Project+1" alt="Project 1" class="w-full h-52 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">E-commerce Platform</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Project Title One</h3>
                         <p class="text-gray-600 mb-4 text-base">
-                            A full-featured online store built with the MERN stack. Includes secure user authentication, a comprehensive product catalog, shopping cart functionality, and robust order management.
+                            A brief description of your first project. Highlight the key technologies used and its main features.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-sky-100 text-sky-800 text-xs font-medium px-3 py-1 rounded-full">MongoDB</span>
-                            <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-3 py-1 rounded-full">Express.js</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">React</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-3 py-1 rounded-full">Stripe API</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-3 py-1 rounded-full">React</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">MongoDB</span>
                         </div>
                         <div class="flex justify-between items-center mt-4">
-                            <a href="#" class="text-sky-600 hover:text-sky-800 font-semibold transition duration-300 flex items-center">Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i></a>
+                            <a href="#" class="text-teal-600 hover:text-teal-800 font-semibold transition duration-300 flex items-center">Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i></a>
                             <a href="#" class="text-gray-600 hover:text-gray-800 transition duration-300 flex items-center">GitHub <i class="fab fa-github ml-2 text-sm"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="https://placehold.co/600x400/38bdf8/ffffff?text=Task+Manager" alt="Task Management Application" class="w-full h-52 object-cover rounded-t-xl">
+                    <img src="https://placehold.co/600x400/14b8a6/ffffff?text=Project+2" alt="Project 2" class="w-full h-52 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Real-time Task Management App</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Project Title Two</h3>
                         <p class="text-gray-600 mb-4 text-base">
-                            A collaborative task management application enabling users to create, update, and delete tasks with real-time synchronization across devices using WebSockets.
+                            A brief description of your second project. Focus on its unique aspects and your role in its development.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-sky-100 text-sky-800 text-xs font-medium px-3 py-1 rounded-full">MongoDB</span>
-                            <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-3 py-1 rounded-full">Express.js</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">React</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
-                            <span class="bg-red-100 text-red-800 text-xs font-medium px-3 py-1 rounded-full">Socket.IO</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-3 py-1 rounded-full">Vue.js</span>
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-3 py-1 rounded-full">Firebase</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">JavaScript</span>
                         </div>
                         <div class="flex justify-between items-center mt-4">
-                            <a href="#" class="text-sky-600 hover:text-sky-800 font-semibold transition duration-300 flex items-center">Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i></a>
+                            <a href="#" class="text-teal-600 hover:text-teal-800 font-semibold transition duration-300 flex items-center">Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i></a>
                             <a href="#" class="text-gray-600 hover:text-gray-800 transition duration-300 flex items-center">GitHub <i class="fab fa-github ml-2 text-sm"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <img src="https://placehold.co/600x400/fbbf24/ffffff?text=Blog+Platform" alt="Blog Platform" class="w-full h-52 object-cover rounded-t-xl">
+                    <img src="https://placehold.co/600x400/14b8a6/ffffff?text=Project+3" alt="Project 3" class="w-full h-52 object-cover rounded-t-xl">
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Feature-Rich Blog Platform</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Project Title Three</h3>
                         <p class="text-gray-600 mb-4 text-base">
-                            A dynamic blog platform with user authentication, rich text editing, comment sections, and tag-based filtering for posts.
+                            A brief description of your third project. Mention any challenges overcome or innovative solutions implemented.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-sky-100 text-sky-800 text-xs font-medium px-3 py-1 rounded-full">MongoDB</span>
-                            <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-3 py-1 rounded-full">Express.js</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-3 py-1 rounded-full">React</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
-                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1 rounded-full">Draft.js</span>
+                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-3 py-1 rounded-full">Angular</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1 rounded-full">AWS</span>
                         </div>
                         <div class="flex justify-between items-center mt-4">
-                            <a href="#" class="text-sky-600 hover:text-sky-800 font-semibold transition duration-300 flex items-center">Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i></a>
+                            <a href="#" class="text-teal-600 hover:text-teal-800 font-semibold transition duration-300 flex items-center">Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i></a>
                             <a href="#" class="text-gray-600 hover:text-gray-800 transition duration-300 flex items-center">GitHub <i class="fab fa-github ml-2 text-sm"></i></a>
                         </div>
                     </div>
@@ -573,24 +557,24 @@
         </div>
     </section>
 
-    <section id="contact" class="py-16 md:py-24 bg-white fade-in-section">
+    <section id="contact" class="py-16 md:py-24 bg-gray-50 fade-in-section">
         <div class="container mx-auto px-6 max-w-2xl">
             <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">Get in Touch</h2>
             <p class="text-lg text-center text-gray-700 mb-10">
                 I'm always open to new opportunities, collaborations, and interesting discussions. Feel free to reach out!
             </p>
-            <form class="bg-gray-50 p-8 rounded-2xl shadow-xl border border-gray-200">
+            <form class="bg-white p-8 rounded-2xl shadow-xl border border-gray-200">
                 <div class="mb-6">
                     <label for="name" class="block text-gray-700 text-base font-semibold mb-2">Name</label>
-                    <input type="text" id="name" name="name" class="shadow-sm border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition duration-200" placeholder="Your Full Name">
+                    <input type="text" id="name" name="name" class="shadow-sm border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition duration-200" placeholder="Your Full Name">
                 </div>
                 <div class="mb-6">
                     <label for="email" class="block text-gray-700 text-base font-semibold mb-2">Email</label>
-                    <input type="email" id="email" name="email" class="shadow-sm border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition duration-200" placeholder="your.email@example.com">
+                    <input type="email" id="email" name="email" class="shadow-sm border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition duration-200" placeholder="your.email@example.com">
                 </div>
                 <div class="mb-6">
                     <label for="message" class="block text-gray-700 text-base font-semibold mb-2">Message</label>
-                    <textarea id="message" name="message" rows="7" class="shadow-sm border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition duration-200" placeholder="Type your message here..."></textarea>
+                    <textarea id="message" name="message" rows="7" class="shadow-sm border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition duration-200" placeholder="Type your message here..."></textarea>
                 </div>
                 <div class="flex justify-center">
                     <button type="submit" class="btn-primary flex items-center">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
@@ -601,12 +585,12 @@
 
     <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p class="mb-6 text-gray-400">&copy; 2025 Jasim. All rights reserved.</p>
+            <p class="mb-6 text-gray-400">&copy; 2025 Your Name. All rights reserved.</p>
             <div class="flex justify-center space-x-8">
-                <a href="#" class="text-gray-400 hover:text-sky-400 transition duration-300 text-2xl" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-gray-400 hover:text-sky-400 transition duration-300 text-2xl" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-gray-400 hover:text-sky-400 transition duration-300 text-2xl" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-gray-400 hover:text-sky-400 transition duration-300 text-2xl" aria-label="Email Address"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300 text-2xl" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300 text-2xl" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300 text-2xl" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300 text-2xl" aria-label="Email Address"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
@@ -631,8 +615,8 @@
         const faders = document.querySelectorAll('.fade-in-section');
 
         const appearOptions = {
-            threshold: 0.2, // Trigger when 20% of the section is visible
-            rootMargin: "0px 0px -50px 0px" // Adjust to trigger slightly earlier
+            threshold: 0.2, /* Trigger when 20% of the section is visible */
+            rootMargin: "0px 0px -50px 0px" /* Adjust to trigger slightly earlier */
         };
 
         const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
@@ -641,7 +625,7 @@
                     return;
                 } else {
                     entry.target.classList.add('is-visible');
-                    appearOnScroll.unobserve(entry.target); // Stop observing once visible
+                    appearOnScroll.unobserve(entry.target); /* Stop observing once visible */
                 }
             });
         }, appearOptions);
@@ -652,10 +636,12 @@
 
         // Intersection Observer for staggered item animations within sections
         const skillItems = document.querySelectorAll('#skills-grid > div');
-        const timelineItems = document.querySelectorAll('#timeline-container > div');
+        const projectCards = document.querySelectorAll('.project-card');
+        const educationTimelineItems = document.querySelectorAll('#education-timeline-container > div');
+
 
         const itemAppearOptions = {
-            threshold: 0.1, // Trigger when 10% of the item is visible
+            threshold: 0.1, /* Trigger when 10% of the item is visible */
             rootMargin: "0px 0px -20px 0px"
         };
 
@@ -673,8 +659,13 @@
             itemAppearOnScroll.observe(item);
         });
 
-        // Observe timeline items
-        timelineItems.forEach(item => {
+        // Observe project cards
+        projectCards.forEach(item => {
+            itemAppearOnScroll.observe(item);
+        });
+
+        // Observe education timeline items
+        educationTimelineItems.forEach(item => {
             itemAppearOnScroll.observe(item);
         });
 
@@ -682,7 +673,7 @@
         // Dark Mode Logic
         const darkModeToggle = document.getElementById('darkModeToggle');
         const darkModeIcon = document.getElementById('darkModeIcon');
-        const htmlElement = document.documentElement; // Get the <html> element
+        const htmlElement = document.documentElement; /* Get the <html> element */
 
         // Function to set the theme
         function setTheme(theme) {
@@ -704,10 +695,10 @@
         if (savedTheme) {
             setTheme(savedTheme);
         } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            // If no preference saved, check OS preference
+            /* If no preference saved, check OS preference */
             setTheme('dark');
         } else {
-            setTheme('light'); // Default to light if no preference and OS is not dark
+            setTheme('light'); /* Default to light if no preference and OS is not dark */
         }
 
         // Toggle theme on button click

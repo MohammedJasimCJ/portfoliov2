@@ -272,12 +272,48 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
+        /* New: Profile Image Bounce In */
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 1; }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+        .animate-bounce-in {
+            animation: bounceIn 1s ease-out forwards;
+            animation-delay: 0.2s; /* Delay for profile image */
+        }
+
+        /* New: Fade In from Left/Right */
+        @keyframes fadeInLeft {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInRight {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        .animate-fade-in-left { animation: fadeInLeft 0.8s ease-out forwards; }
+        .animate-fade-in-right { animation: fadeInRight 0.8s ease-out forwards; }
+
+        /* New: Zoom In */
+        @keyframes zoomIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .animate-zoom-in { animation: zoomIn 0.8s ease-out forwards; }
+
+
         .animate-fade-in-up {
             animation: heroHeadingIn 1.2s ease-out forwards;
         }
 
         .animate-fade-in-up.delay-200 {
             animation-delay: 0.3s; /* Delay for paragraph after heading */
+        }
+
+        .animate-fade-in-up.delay-400 {
+            animation-delay: 0.5s; /* Delay for buttons */
         }
 
         /* Dark Mode Toggle Pulse Animation */
@@ -289,6 +325,20 @@
         #darkModeToggle:hover {
             animation: pulse 0.8s infinite;
         }
+
+        /* Navbar on Scroll Effect */
+        .navbar-scrolled {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.95); /* Slightly opaque */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+        html.dark .navbar-scrolled {
+            background-color: rgba(13, 13, 13, 0.95); /* Darker opaque */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+        }
+
 
         /* Hamburger Menu Styling */
         #mobile-menu-toggle {
@@ -392,18 +442,16 @@
             color: #10b981; /* Emerald accent */
         }
 
-        /* Animation for skill cards and timeline items */
-        .animate-item-fade-in {
+        /* Generic Section Fade-in-Up Animation */
+        .fade-in-section {
             opacity: 0;
-            transform: translateY(20px);
-            animation: itemFadeIn 0.6s ease-out forwards;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        @keyframes itemFadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Navbar link hover animation */
@@ -445,11 +493,62 @@
         html.dark .profile-image:hover {
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Darker shadow for dark mode */
         }
+
+        /* New: Skill Card 3D Hover */
+        .skill-card-hover:hover {
+            transform: translateY(-5px) scale(1.02) rotateY(5deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        html.dark .skill-card-hover:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Scroll to Top Button */
+        #scrollToTopBtn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #10b981; /* Emerald 500 */
+            color: white;
+            border-radius: 9999px;
+            padding: 1rem 1.25rem;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #scrollToTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #scrollToTopBtn:hover {
+            transform: translateY(-3px) scale(1.05);
+            background-color: #059669; /* Darker emerald on hover */
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+        }
+
+        html.dark #scrollToTopBtn {
+            background-color: #34d399; /* Lighter emerald for dark mode */
+            box-shadow: 0 4px 15px rgba(52, 211, 153, 0.4);
+        }
+
+        html.dark #scrollToTopBtn:hover {
+            background-color: #10b981; /* Darker emerald on hover in dark mode */
+            box-shadow: 0 6px 20px rgba(52, 211, 153, 0.6);
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="bg-white shadow-md py-4 sticky top-0 z-50">
+    <header id="main-header" class="bg-white shadow-md py-4 sticky top-0 z-50 transition-all duration-300 ease-in-out">
         <nav class="container mx-auto px-4 flex justify-between items-center">
             <a href="#hero" class="text-2xl font-extrabold text-gray-800 rounded-md p-2 hover:bg-gray-100 transition duration-300 logo-font">My Portfolio</a>
 
@@ -495,11 +594,11 @@
             </div>
             <div class="relative z-10 container mx-auto px-6 text-center max-w-4xl">
                 <div class="flex flex-col items-center justify-center mb-10 md:mb-12">
-                    <img src=./images/PIC.jpeg  alt="Your Profile Picture" class="profile-image rounded-full shadow-xl border-4 border-emerald-200 object-cover w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56">
+                    <img src=./images/PIC.jpeg  alt="Your Profile Picture" class="profile-image rounded-full shadow-xl border-4 border-emerald-200 object-cover w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 animate-bounce-in">
                 </div>
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg animate-fade-in-up">Hello, I'm <span class="text-emerald-600">Jasim</span></h1>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg animate-fade-in-up">Hello, I'm <span class="text-emerald-600">jasim</span></h1>
                 <p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-95 animate-fade-in-up delay-200 max-w-2xl mx-auto">I build impactful web applications with a focus on clean code and user experience.</p>
-                <div class="space-x-4 animate-fade-in-up delay-300">
+                <div class="space-x-4 animate-fade-in-up delay-400">
                     <a href="#projects" class="btn-primary inline-flex items-center">View My Work <i class="fas fa-arrow-right ml-2"></i></a>
                     <a href="#contact" class="btn-secondary inline-flex items-center">Contact Me <i class="fas fa-envelope ml-2"></i></a>
                 </div>
@@ -522,7 +621,7 @@
                 <h2 class="text-3xl sm:text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Education</h2>
 
                 <div class="relative border-l-2 border-emerald-300 pl-8 ml-4 md:ml-0 md:pl-12" id="education-timeline-container">
-                    <div class="mb-12 relative animate-item-fade-in" style="animation-delay: 0s;">
+                    <div class="mb-12 relative">
                         <div class="absolute w-4 h-4 bg-emerald-500 rounded-full -left-10 md:-left-12 top-1.5 transform -translate-x-1/2 border-2 border-emerald-50 dark:border-black"></div>
                         <p class="text-sm text-gray-500 mb-1">2023 - Present</p>
                         <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Upskilling in PHP, React, MERN Stack, AI</h3>
@@ -531,7 +630,7 @@
                         </p>
                     </div>
 
-                    <div class="mb-12 relative animate-item-fade-in" style="animation-delay: 0.2s;">
+                    <div class="mb-12 relative">
                         <div class="absolute w-4 h-4 bg-emerald-500 rounded-full -left-10 md:-left-12 top-1.5 transform -translate-x-1/2 border-2 border-emerald-50 dark:border-black"></div>
                         <p class="text-sm text-gray-500 mb-1">2020 - 2023 (Pass Out)</p>
                         <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Bachelor of Computer Applications (BCA) | KMEA College of Arts and Science, Kuzhivelipady</h3>
@@ -540,7 +639,7 @@
                         </p>
                     </div>
 
-                    <div class="mb-4 relative animate-item-fade-in" style="animation-delay: 0.4s;">
+                    <div class="mb-4 relative">
                         <div class="absolute w-4 h-4 bg-emerald-500 rounded-full -left-10 md:-left-12 top-1.5 transform -translate-x-1/2 border-2 border-emerald-50 dark:border-black"></div>
                         <p class="text-sm text-gray-500 mb-1">2020</p>
                         <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">12th Grade | Model Technical Higher Secondary School, Kaloor</h3>
@@ -556,35 +655,35 @@
             <div class="container mx-auto px-6 max-w-5xl">
                 <h2 class="text-3xl sm:text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Skills</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 text-center" id="skills-grid">
-                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0s;">
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer skill-card-hover">
                         <i class="fab fa-react text-4xl text-emerald-500 mb-3"></i>
                         <h3 class="text-lg font-semibold text-gray-800">React.js</h3>
                     </div>
-                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.1s;">
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer skill-card-hover">
                         <i class="fab fa-node-js text-4xl text-green-600 mb-3"></i>
                         <h3 class="text-lg font-semibold text-gray-800">Node.js</h3>
                     </div>
-                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.2s;">
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer skill-card-hover">
                         <i class="fas fa-database text-4xl text-emerald-600 mb-3"></i>
                         <h3 class="text-lg font-semibold text-gray-800">Databases</h3>
                     </div>
-                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.3s;">
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer skill-card-hover">
                         <i class="fab fa-js-square text-4xl text-yellow-500 mb-3"></i>
                         <h3 class="text-lg font-semibold text-gray-800">JavaScript</h3>
                     </div>
-                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.4s;">
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer skill-card-hover">
                         <i class="fab fa-html5 text-4xl text-orange-500 mb-3"></i>
                         <h3 class="text-lg font-semibold text-gray-800">HTML5</h3>
                     </div>
-                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.5s;">
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer skill-card-hover">
                         <i class="fab fa-css3-alt text-4xl text-emerald-400 mb-3"></i>
                         <h3 class="text-lg font-semibold text-gray-800">CSS3 & Tailwind</h3>
                     </div>
-                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.6s;">
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer skill-card-hover">
                         <i class="fab fa-git-alt text-4xl text-red-600 mb-3"></i>
                         <h3 class="text-lg font-semibold text-gray-800">Git & GitHub</h3>
                     </div>
-                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.7s;">
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer skill-card-hover">
                         <i class="fas fa-server text-4xl text-gray-600 mb-3"></i>
                         <h3 class="text-lg font-semibold text-gray-800">API Development</h3>
                     </div>
@@ -687,7 +786,7 @@
 
     <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p class="mb-6 text-gray-400">&copy; 2025 Jasim. All rights reserved.</p>
+            <p class="mb-6 text-gray-400">&copy; 2025 jasim. All rights reserved.</p>
             <div class="flex justify-center space-x-8">
                 <a href="#" class="text-gray-400 hover:text-emerald-400 transition duration-300 text-2xl" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
                 <a href="#" class="text-gray-400 hover:text-emerald-400 transition duration-300 text-2xl" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
@@ -696,6 +795,10 @@
             </div>
         </div>
     </footer>
+
+    <button id="scrollToTopBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         // Smooth scroll for navigation links
@@ -729,6 +832,34 @@
                     return;
                 } else {
                     entry.target.classList.add('is-visible');
+                    // Apply animations based on specific section or element type
+                    // Note: Hero section elements already have their animations applied directly in HTML
+                    if (entry.target.id === 'about') {
+                        entry.target.querySelector('.section-heading').classList.add('animate-fade-in-up');
+                        entry.target.querySelector('div.text-lg').classList.add('animate-fade-in-up', 'delay-200');
+                    } else if (entry.target.id === 'education') {
+                        entry.target.querySelector('.section-heading').classList.add('animate-fade-in-up');
+                        entry.target.querySelectorAll('#education-timeline-container > div').forEach((item, index) => {
+                            item.classList.add(index % 2 === 0 ? 'animate-fade-in-left' : 'animate-fade-in-right');
+                            item.style.animationDelay = `${0.2 * index}s`;
+                        });
+                    } else if (entry.target.id === 'skills') {
+                        entry.target.querySelector('.section-heading').classList.add('animate-fade-in-up');
+                        entry.target.querySelectorAll('#skills-grid > div').forEach((item, index) => {
+                            item.classList.add('animate-zoom-in');
+                            item.style.animationDelay = `${0.1 * index}s`;
+                        });
+                    } else if (entry.target.id === 'projects') {
+                        entry.target.querySelector('.section-heading').classList.add('animate-fade-in-up');
+                        entry.target.querySelectorAll('.project-card').forEach((item, index) => {
+                            item.classList.add('animate-zoom-in');
+                            item.style.animationDelay = `${0.1 * index}s`;
+                        });
+                    } else if (entry.target.id === 'contact') {
+                        entry.target.querySelector('.section-heading').classList.add('animate-fade-in-up');
+                        entry.target.querySelector('p.text-lg').classList.add('animate-fade-in-up', 'delay-200');
+                        entry.target.querySelector('form').classList.add('animate-zoom-in', 'delay-300');
+                    }
                     appearOnScroll.unobserve(entry.target); /* Stop observing once visible */
                 }
             });
@@ -738,39 +869,14 @@
             appearOnScroll.observe(fader);
         });
 
-        // Intersection Observer for staggered item animations within sections
-        const skillItems = document.querySelectorAll('#skills-grid > div');
-        const projectCards = document.querySelectorAll('.project-card');
-        const educationTimelineItems = document.querySelectorAll('#education-timeline-container > div');
-
-
-        const itemAppearOptions = {
-            threshold: 0.1, /* Trigger when 10% of the item is visible */
-            rootMargin: "0px 0px -20px 0px"
-        };
-
-        const itemAppearOnScroll = new IntersectionObserver(function(entries, itemAppearOnScroll) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-item-fade-in');
-                    itemAppearOnScroll.unobserve(entry.target);
-                }
-            });
-        }, itemAppearOptions);
-
-        // Observe skill items
-        skillItems.forEach(item => {
-            itemAppearOnScroll.observe(item);
-        });
-
-        // Observe project cards
-        projectCards.forEach(item => {
-            itemAppearOnScroll.observe(item);
-        });
-
-        // Observe education timeline items
-        educationTimelineItems.forEach(item => {
-            itemAppearOnScroll.observe(item);
+        // Navbar scroll effect
+        const mainHeader = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { /* Adjust scroll threshold as needed */
+                mainHeader.classList.add('navbar-scrolled');
+            } else {
+                mainHeader.classList.remove('navbar-scrolled');
+            }
         });
 
 
@@ -825,6 +931,24 @@
                 }
             });
         }
+
+        // Scroll to Top Button Logic
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { /* Show button after scrolling 300px down */
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' /* Smooth scroll to top */
+            });
+        });
     </script>
 </body>
 </html>

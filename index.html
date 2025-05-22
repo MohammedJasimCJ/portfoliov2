@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Professional Portfolio</title>
+    <title>My Minimal Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
@@ -11,9 +11,9 @@
         /* Base styles for light mode */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* Light gray background */
+            background-color: #ffffff; /* Very good light color for day theme */
             color: #334155; /* Darker gray text */
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.6s ease, color 0.6s ease; /* Increased transition duration */
             overflow-x: hidden; /* Prevent horizontal scrolling */
         }
         html {
@@ -28,100 +28,119 @@
 
         /* Dark mode specific styles */
         html.dark body {
-            background-color: #000000; /* Deep black background */
-            color: #e2e8f0; /* Light text */
+            background-color: #000000; /* Very dark black for dark theme */
+            color: #94a3b8; /* Adjusted to slate-400 for general text */
         }
 
         html.dark .bg-white {
             background-color: #0d0d0d; /* Darker background for cards/sections */
-            color: #e2e8f0;
+            color: #94a3b8; /* Adjusted for consistency */
+            transition: background-color 0.6s ease, color 0.6s ease; /* Ensure transition */
         }
 
         html.dark .bg-gray-50 {
             background-color: #0d0d0d; /* Darker background for striped sections */
-            color: #e2e8f0;
+            color: #94a3b8; /* Adjusted for consistency */
+            transition: background-color 0.6s ease, color 0.6s ease; /* Ensure transition */
         }
 
         html.dark .shadow-md, html.dark .shadow-lg, html.dark .shadow-xl, html.dark .shadow-2xl {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 10px 15px rgba(0, 0, 0, 0.4); /* Darker shadows for contrast */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), 0 10px 15px rgba(0, 0, 0, 0.5); /* Darker shadows for contrast */
         }
 
         html.dark .border {
-            border-color: #333333; /* Darker border color */
+            border-color: #1f2937; /* Darker border color */
+            transition: border-color 0.6s ease; /* Ensure transition */
         }
 
         html.dark .text-gray-700 {
-            color: #cbd5e0; /* Lighter gray text */
+            color: #94a3b8; /* Slate-400 for general text in dark mode */
+            transition: color 0.6s ease; /* Ensure transition */
         }
 
         html.dark .text-gray-800 {
-            color: #f7fafc; /* Lighter text for headings */
+            color: #cbd5e0; /* Slate-300 for headings in dark mode */
+            transition: color 0.6s ease; /* Ensure transition */
         }
 
         html.dark .text-gray-900 {
-            color: #f7fafc; /* Lighter text for bold elements */
+            color: #e2e8f0; /* Slate-200 for boldest text in dark mode */
+            transition: color 0.6s ease; /* Ensure transition */
         }
 
         html.dark .text-gray-600 {
-            color: #a0aec0; /* Lighter gray for descriptions */
+            color: #a0aec0; /* Slate-400 for descriptions */
+            transition: color 0.6s ease; /* Ensure transition */
         }
 
         html.dark .text-gray-500 {
-            color: #a0aec0; /* Lighter gray for timestamps */
+            color: #64748b; /* Slate-500 for timestamps */
+            transition: color 0.6s ease; /* Ensure transition */
         }
 
         html.dark .text-gray-400 {
-            color: #718096; /* Slightly lighter gray for footer links */
+            color: #475569; /* Slate-600 for footer links */
+            transition: color 0.6s ease; /* Ensure transition */
         }
 
         html.dark .hover\:bg-gray-100:hover {
-            background-color: #2a2a2a; /* Darker hover for nav links */
+            background-color: #1a1a1a; /* Darker hover for nav links */
+            transition: background-color 0.6s ease; /* Ensure transition */
         }
 
-        /* Dark mode accent colors (teal theme) */
-        html.dark .hover\:text-teal-600:hover {
-            color: #5eead4; /* Lighter teal for hover */
+        /* Dark mode accent colors (emerald theme) */
+        html.dark .hover\:text-emerald-600:hover {
+            color: #6ee7b7; /* Lighter emerald for hover */
         }
 
         html.dark .section-heading::after {
-            background-color: #2dd4bf; /* Accent color for dark mode underline */
+            background-color: #34d399; /* Accent color for dark mode underline */
+            transition: background-color 0.6s ease; /* Ensure transition */
         }
 
         html.dark .btn-primary {
-            background: linear-gradient(to right, #2dd4bf, #14b8a6); /* Dark mode gradient - teal */
-            box-shadow: 0 4px 15px rgba(45, 212, 191, 0.4);
+            background-color: #10b981; /* Solid emerald for dark mode */
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+            transition: background-color 0.6s ease, box-shadow 0.6s ease; /* Ensure transition */
         }
         html.dark .btn-primary:hover {
-            box-shadow: 0 6px 20px rgba(45, 212, 191, 0.6);
+            background-color: #059669; /* Darker emerald on hover */
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
         }
 
         html.dark .project-card {
             background-color: #0d0d0d; /* Darker background for project cards */
-            border-color: #333333;
+            border-color: #1f2937;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease; /* Ensure transition */
         }
         html.dark .project-card:hover {
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
-        html.dark .text-teal-600 { /* For project card links */
-            color: #2dd4bf;
+        html.dark .text-emerald-600 { /* For project card links */
+            color: #34d399;
+            transition: color 0.6s ease; /* Ensure transition */
         }
-        html.dark .hover\:text-teal-800:hover {
-            color: #0f766e;
+        html.dark .hover\:text-emerald-800:hover {
+            color: #065f46;
         }
 
-        html.dark .border-teal-200 { /* For education timeline */
-            border-color: #5eead4;
+        html.dark .border-emerald-200 { /* For education timeline */
+            border-color: #6ee7b7;
+            transition: border-color 0.6s ease; /* Ensure transition */
         }
-        html.dark .bg-teal-500 {
-            background-color: #2dd4bf;
+        html.dark .bg-emerald-500 {
+            background-color: #34d399;
+            transition: background-color 0.6s ease; /* Ensure transition */
         }
         html.dark .bg-purple-500 { /* For upskilling dot */
             background-color: #a78bfa;
+            transition: background-color 0.6s ease; /* Ensure transition */
         }
-        html.dark .bg-green-600 { /* For Node.js icon in skills */
-            color: #34d399;
+        html.dark .bg-yellow-500 { /* For JS icon in skills */
+            color: #fcd34d;
+            transition: color 0.6s ease; /* Ensure transition */
         }
 
 
@@ -134,6 +153,11 @@
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            color: #334155; /* Default for light mode */
+            transition: color 0.6s ease; /* Ensure transition */
+        }
+        html.dark .section-heading {
+            color: #e2e8f0; /* Dark mode heading color */
         }
         .section-heading::after {
             content: '';
@@ -143,41 +167,70 @@
             bottom: 0;
             width: 80px;
             height: 5px;
-            background-color: #14b8a6; /* Teal for light mode */
+            background-color: #10b981; /* Emerald for light mode */
             border-radius: 9999px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.6s ease; /* Ensure transition */
         }
         /* Custom button styling for better appearance */
         .btn-primary {
-            background: linear-gradient(to right, #14b8a6, #0d9488); /* Teal to darker teal gradient */
+            background-color: #10b981; /* Solid emerald */
             color: white;
             font-weight: 600;
             padding: 0.75rem 2rem;
             border-radius: 9999px;
-            box-shadow: 0 4px 15px rgba(20, 184, 166, 0.4);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
             transition: all 0.3s ease-in-out;
             cursor: pointer;
         }
         .btn-primary:hover {
             transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(20, 184, 166, 0.6);
+            background-color: #059669; /* Darker emerald on hover */
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #334155;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            border: 1px solid #cbd5e0;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px) scale(1.02);
+            background-color: #e2e8f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        html.dark .btn-secondary {
+            color: #94a3b8; /* Darker grey for secondary button text */
+            border-color: #475569; /* Darker grey border */
+            transition: color 0.6s ease, border-color 0.6s ease, background-color 0.6s ease, box-shadow 0.6s ease; /* Ensure transition */
+        }
+
+        html.dark .btn-secondary:hover {
+            background-color: #1f2937;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
         }
 
         /* Project card specific styling */
         .project-card {
-            background-color: #ffffff;
+            background-color: #d1fae5; /* Light Emerald (emerald-100) */
             border-radius: 1rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out, background-color 0.6s ease, border-color 0.6s ease; /* Ensure transition for theme change */
             overflow: hidden;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #a7f3d0; /* Lighter emerald border */
         }
         .project-card:hover {
             transform: translateY(-5px) scale(1.01);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
         .project-card img {
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid #a7f3d0; /* Lighter emerald border */
         }
 
         /* Dark mode toggle button styling */
@@ -187,7 +240,7 @@
             cursor: pointer;
             font-size: 1.5rem;
             color: #64748b; /* Slate 500 */
-            transition: color 0.3s ease;
+            transition: color 0.6s ease; /* Ensure transition */
             padding: 0.5rem;
             border-radius: 9999px;
             display: flex;
@@ -195,15 +248,15 @@
             justify-content: center;
         }
         #darkModeToggle:hover {
-            color: #14b8a6; /* Teal 500 */
+            color: #10b981; /* Emerald 500 */
             background-color: #e2e8f0; /* Slate 200 */
         }
         html.dark #darkModeToggle {
             color: #cbd5e0; /* Light gray for dark mode */
         }
         html.dark #darkModeToggle:hover {
-            color: #2dd4bf; /* Lighter teal for dark mode hover */
-            background-color: #2a2a2a; /* Darker background for dark mode hover */
+            color: #34d399; /* Lighter emerald for dark mode hover */
+            background-color: #1a1a1a; /* Darker background for dark mode hover */
         }
 
         /* Custom Hero Section Animations */
@@ -302,24 +355,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+            background-color: rgba(255, 255, 255, 0.98); /* Near opaque white */
             backdrop-filter: blur(8px); /* Blur effect */
             z-index: 55; /* Below hamburger icon, above content */
             flex-direction: column;
             align-items: center;
             justify-content: center;
             opacity: 0;
-            transform: translateX(100%);
-            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+            transform: translateX(100%); /* Start off-screen to the right */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, background-color 0.6s ease; /* Ensure transition */
         }
         html.dark .mobile-nav-menu {
-            background-color: rgba(10, 10, 10, 0.95); /* Semi-transparent black */
+            background-color: rgba(0, 0, 0, 0.98); /* Near opaque black */
         }
 
         #mobile-menu-toggle:checked ~ .mobile-nav-menu {
             display: flex; /* Show when toggled */
             opacity: 1;
-            transform: translateX(0);
+            transform: translateX(0); /* Slide in */
         }
 
         .mobile-nav-menu li {
@@ -330,13 +383,13 @@
             font-size: 2rem;
             font-weight: 700;
             color: #334155; /* Darker gray */
-            transition: color 0.3s ease;
+            transition: color 0.6s ease; /* Ensure transition */
         }
         html.dark .mobile-nav-menu a {
             color: #e2e8f0; /* Light text in dark mode */
         }
         .mobile-nav-menu a:hover {
-            color: #14b8a6; /* Teal accent */
+            color: #10b981; /* Emerald accent */
         }
 
         /* Animation for skill cards and timeline items */
@@ -352,21 +405,61 @@
                 transform: translateY(0);
             }
         }
+
+        /* Navbar link hover animation */
+        .main-nav-links a, .mobile-nav-menu a {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.25rem; /* Space for the underline */
+        }
+
+        .main-nav-links a::after, .mobile-nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #10b981; /* Emerald accent */
+            transition: width 0.3s ease-out, background-color 0.6s ease; /* Ensure transition */
+        }
+
+        .main-nav-links a:hover::after, .mobile-nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        html.dark .main-nav-links a::after, html.dark .mobile-nav-menu a::after {
+            background-color: #34d399; /* Lighter emerald for dark mode */
+        }
+
+        /* Profile picture animation */
+        .profile-image {
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.08) rotate(2deg); /* Slightly more pronounced scale and rotation */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+        }
+        html.dark .profile-image:hover {
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6); /* Darker shadow for dark mode */
+        }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="bg-white shadow-md py-4 sticky top-0 z-50">
         <nav class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-extrabold text-teal-700 rounded-md p-2 hover:bg-teal-50 transition duration-300 logo-font">My Portfolio</a>
+            <a href="#hero" class="text-2xl font-extrabold text-gray-800 rounded-md p-2 hover:bg-gray-100 transition duration-300 logo-font">My Portfolio</a>
 
             <div class="nav-toggle-group flex items-center">
                 <ul class="hidden md:flex space-x-6 items-center main-nav-links">
-                    <li><a href="#about" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">About</a></li>
-                    <li><a href="#education" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Education</a></li>
-                    <li><a href="#skills" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Skills</a></li>
-                    <li><a href="#projects" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Projects</a></li>
-                    <li><a href="#contact" class="text-gray-700 hover:text-teal-600 font-medium transition duration-300 rounded-lg px-3 py-2 hover:bg-gray-100">Contact</a></li>
+                    <li><a href="#about" class="text-gray-700 hover:text-emerald-600 font-medium transition duration-300 rounded-lg px-3 py-2">About</a></li>
+                    <li><a href="#education" class="text-gray-700 hover:text-emerald-600 font-medium transition duration-300 rounded-lg px-3 py-2">Education</a></li>
+                    <li><a href="#skills" class="text-gray-700 hover:text-emerald-600 font-medium transition duration-300 rounded-lg px-3 py-2">Skills</a></li>
+                    <li><a href="#projects" class="text-gray-700 hover:text-emerald-600 font-medium transition duration-300 rounded-lg px-3 py-2">Projects</a></li>
+                    <li><a href="#contact" class="text-gray-700 hover:text-emerald-600 font-medium transition duration-300 rounded-lg px-3 py-2">Contact</a></li>
                 </ul>
 
                 <button id="darkModeToggle" aria-label="Toggle dark mode" class="ml-4 md:ml-0">
@@ -391,206 +484,215 @@
         </ul>
     </header>
 
-    <section id="hero" class="bg-gradient-to-br from-teal-700 to-teal-900 text-white py-20 md:py-32 flex items-center justify-center min-h-screen fade-in-section">
-        <div class="container mx-auto px-6 text-center md:flex md:items-center md:justify-center md:space-x-16">
-            <div class="mb-10 md:mb-0 md:w-1/3 flex justify-center">
-                <img src=./images/PIC.jpeg  alt="Your Profile Picture" class="rounded-full shadow-2xl border-4 border-white object-cover w-full max-w-[200px] sm:max-w-[300px] md:max-w-[300px] h-auto transform hover:scale-110 transition duration-500 ease-in-out cursor-pointer">
+    <main>
+        <section id="hero" class="relative overflow-hidden bg-emerald-50 text-gray-800 py-20 md:py-32 flex items-center justify-center min-h-screen fade-in-section">
+            <div class="absolute inset-0 z-0 opacity-10">
+                <svg class="w-full h-full" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <pattern id="pattern-circles" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1" fill="#a7f3d0"/> </pattern>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"/>
+                </svg>
             </div>
-            <div class="md:w-2/3 text-center md:text-left">
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 drop-shadow-lg animate-fade-in-up">Hi, I'm <span class="text-yellow-300">Jasim</span></h1>
-                <p class="text-xl md:text-2xl mb-8 opacity-95 animate-fade-in-up delay-200">A passionate developer building robust and scalable web applications.</p>
-                <a href="#projects" class="btn-primary inline-block">View My Work <i class="fas fa-arrow-right ml-2"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="py-16 md:py-24 bg-white fade-in-section">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">About Me</h2>
-            <div class="text-lg leading-relaxed text-gray-700 space-y-6">
-                <p>Hello! I'm a dedicated developer with a strong focus on creating efficient, scalable, and user-friendly web applications. My expertise lies in transforming complex requirements into elegant code solutions, ensuring a seamless experience from front-end interfaces to robust back-end systems.</p>
-                <p>My journey into web development began with a deep curiosity for how digital products are built and a desire to create impactful solutions. I am proficient in modern JavaScript and various development tools.</p>
-                <p>I thrive in dynamic environments and am constantly seeking opportunities to expand my knowledge and skills. Whether it's learning new frameworks, exploring advanced architectural patterns, or contributing to open-source projects, I am committed to continuous growth. Outside of coding, I enjoy problem-solving, reading tech blogs, and staying updated with the latest industry trends.</p>
-                <p>I'm excited about the prospect of contributing my skills to innovative projects and collaborating with passionate teams. Please explore my portfolio to see examples of my work and feel free to connect!</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" class="py-16 md:py-24 bg-gray-50 fade-in-section">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Education</h2>
-
-            <div class="relative border-l-4 border-teal-200 pl-8 ml-4" id="education-timeline-container">
-                <div class="mb-12 relative animate-item-fade-in" style="animation-delay: 0s;">
-                    <div class="absolute w-4 h-4 bg-purple-500 rounded-full -left-10 top-1.5 transform -translate-x-1/2"></div>
-                    <p class="text-sm text-gray-500 mb-1">2023 - Present</p>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Upskilling in PHP, React, MERN Stack, AI</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Dedicated to intensive self-study and practical application, mastering PHP, React, MERN stack technologies, and foundational AI concepts.
-                    </p>
+            <div class="relative z-10 container mx-auto px-6 text-center max-w-4xl">
+                <div class="flex flex-col items-center justify-center mb-10 md:mb-12">
+                    <img src=./images/PIC.jpeg  alt="Your Profile Picture" class="profile-image rounded-full shadow-xl border-4 border-emerald-200 object-cover w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56">
                 </div>
-
-                <div class="mb-12 relative animate-item-fade-in" style="animation-delay: 0.2s;">
-                    <div class="absolute w-4 h-4 bg-teal-500 rounded-full -left-10 top-1.5 transform -translate-x-1/2"></div>
-                    <p class="text-sm text-gray-500 mb-1">2020 - 2023 (Pass Out)</p>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Bachelor of Computer Applications (BCA) | KMEA College of Arts and Science, Kuzhivelipady</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Completed BCA, gaining a strong foundation in computer science principles, software development, and problem-solving.
-                    </p>
-                </div>
-
-                <div class="mb-4 relative animate-item-fade-in" style="animation-delay: 0.4s;">
-                    <div class="absolute w-4 h-4 bg-teal-500 rounded-full -left-10 top-1.5 transform -translate-x-1/2"></div>
-                    <p class="text-sm text-gray-500 mb-1">2020</p>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">12th Grade | Model Technical Higher Secondary School, Kaloor</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Completed higher secondary education with a focus on technical subjects, building a strong academic base.
-                    </p>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg animate-fade-in-up">Hello, I'm <span class="text-emerald-600">Jasim</span></h1>
+                <p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-95 animate-fade-in-up delay-200 max-w-2xl mx-auto">I build impactful web applications with a focus on clean code and user experience.</p>
+                <div class="space-x-4 animate-fade-in-up delay-300">
+                    <a href="#projects" class="btn-primary inline-flex items-center">View My Work <i class="fas fa-arrow-right ml-2"></i></a>
+                    <a href="#contact" class="btn-secondary inline-flex items-center">Contact Me <i class="fas fa-envelope ml-2"></i></a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="py-16 md:py-24 bg-white fade-in-section">
-        <div class="container mx-auto px-6 max-w-5xl">
-            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Skills</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 text-center" id="skills-grid">
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0s;">
-                    <i class="fab fa-react text-5xl text-teal-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">React.js</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.1s;">
-                    <i class="fab fa-node-js text-5xl text-green-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">Node.js</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.2s;">
-                    <i class="fas fa-database text-5xl text-teal-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">Databases</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.3s;">
-                    <i class="fab fa-js-square text-5xl text-yellow-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">JavaScript</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.4s;">
-                    <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">HTML5</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.5s;">
-                    <i class="fab fa-css3-alt text-5xl text-teal-400 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">CSS3 & Tailwind</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.6s;">
-                    <i class="fab fa-git-alt text-5xl text-red-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">Git & GitHub</h3>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-2 cursor-pointer animate-item-fade-in" style="animation-delay: 0.7s;">
-                    <i class="fas fa-server text-5xl text-gray-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-800">API Development</h3>
+        <section id="about" class="py-16 md:py-24 bg-emerald-100 fade-in-section">
+            <div class="container mx-auto px-6 max-w-3xl text-center">
+                <h2 class="text-3xl sm:text-4xl text-gray-800 section-heading mx-auto">About Me</h2>
+                <div class="text-lg leading-relaxed text-gray-700 space-y-6 mt-8">
+                    <p>I'm a passionate developer dedicated to crafting efficient, scalable, and user-friendly web applications. My expertise lies in transforming complex requirements into elegant code solutions, ensuring a seamless experience from front-end interfaces to robust back-end systems.</p>
+                    <p>My journey into web development began with a deep curiosity for how digital products are built and a desire to create impactful solutions. I am proficient in modern JavaScript and various development tools. I thrive in dynamic environments and am constantly seeking opportunities to expand my knowledge and skills.</p>
+                    <p>Whether it's learning new frameworks, exploring advanced architectural patterns, or contributing to open-source projects, I am committed to continuous growth. Outside of coding, I enjoy problem-solving, reading tech blogs, and staying updated with the latest industry trends.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects" class="py-16 md:py-24 bg-white fade-in-section">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <section id="education" class="py-16 md:py-24 bg-emerald-50 fade-in-section">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl sm:text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Education</h2>
 
-                <div class="project-card">
-                    <img src="https://placehold.co/600x400/14b8a6/ffffff?text=Project+1" alt="Project 1" class="w-full h-52 object-cover rounded-t-xl">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Project Title One</h3>
-                        <p class="text-gray-600 mb-4 text-base">
-                            A brief description of your first project. Highlight the key technologies used and its main features.
+                <div class="relative border-l-2 border-emerald-300 pl-8 ml-4 md:ml-0 md:pl-12" id="education-timeline-container">
+                    <div class="mb-12 relative animate-item-fade-in" style="animation-delay: 0s;">
+                        <div class="absolute w-4 h-4 bg-emerald-500 rounded-full -left-10 md:-left-12 top-1.5 transform -translate-x-1/2 border-2 border-emerald-50 dark:border-black"></div>
+                        <p class="text-sm text-gray-500 mb-1">2023 - Present</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Upskilling in PHP, React, MERN Stack, AI</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Dedicated to intensive self-study and practical application, mastering PHP, React, MERN stack technologies, and foundational AI concepts.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-3 py-1 rounded-full">React</span>
-                            <span class="bg-green-100 text-green-800 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded-full">MongoDB</span>
-                        </div>
-                        <div class="flex justify-between items-center mt-4">
-                            <a href="#" class="text-teal-600 hover:text-teal-800 font-semibold transition duration-300 flex items-center">Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition duration-300 flex items-center">GitHub <i class="fab fa-github ml-2 text-sm"></i></a>
-                        </div>
+                    </div>
+
+                    <div class="mb-12 relative animate-item-fade-in" style="animation-delay: 0.2s;">
+                        <div class="absolute w-4 h-4 bg-emerald-500 rounded-full -left-10 md:-left-12 top-1.5 transform -translate-x-1/2 border-2 border-emerald-50 dark:border-black"></div>
+                        <p class="text-sm text-gray-500 mb-1">2020 - 2023 (Pass Out)</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Bachelor of Computer Applications (BCA) | KMEA College of Arts and Science, Kuzhivelipady</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Completed BCA, gaining a strong foundation in computer science principles, software development, and problem-solving.
+                        </p>
+                    </div>
+
+                    <div class="mb-4 relative animate-item-fade-in" style="animation-delay: 0.4s;">
+                        <div class="absolute w-4 h-4 bg-emerald-500 rounded-full -left-10 md:-left-12 top-1.5 transform -translate-x-1/2 border-2 border-emerald-50 dark:border-black"></div>
+                        <p class="text-sm text-gray-500 mb-1">2020</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">12th Grade | Model Technical Higher Secondary School, Kaloor</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Completed higher secondary education with a focus on technical subjects, building a strong academic base.
+                        </p>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <img src="https://placehold.co/600x400/14b8a6/ffffff?text=Project+2" alt="Project 2" class="w-full h-52 object-cover rounded-t-xl">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Project Title Two</h3>
-                        <p class="text-gray-600 mb-4 text-base">
-                            A brief description of your second project. Focus on its unique aspects and your role in its development.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-3 py-1 rounded-full">Vue.js</span>
-                            <span class="bg-red-100 text-red-800 text-xs font-medium px-3 py-1 rounded-full">Firebase</span>
-                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">JavaScript</span>
-                        </div>
-                        <div class="flex justify-between items-center mt-4">
-                            <a href="#" class="text-teal-600 hover:text-teal-800 font-semibold transition duration-300 flex items-center">Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition duration-300 flex items-center">GitHub <i class="fab fa-github ml-2 text-sm"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <img src="https://placehold.co/600x400/14b8a6/ffffff?text=Project+3" alt="Project 3" class="w-full h-52 object-cover rounded-t-xl">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Project Title Three</h3>
-                        <p class="text-gray-600 mb-4 text-base">
-                            A brief description of your third project. Mention any challenges overcome or innovative solutions implemented.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-teal-100 text-teal-800 text-xs font-medium px-3 py-1 rounded-full">Angular</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-3 py-1 rounded-full">Python</span>
-                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-3 py-1 rounded-full">AWS</span>
-                        </div>
-                        <div class="flex justify-between items-center mt-4">
-                            <a href="#" class="text-teal-600 hover:text-teal-800 font-semibold transition duration-300 flex items-center">Live Demo <i class="fas fa-external-link-alt ml-2 text-sm"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-gray-800 transition duration-300 flex items-center">GitHub <i class="fab fa-github ml-2 text-sm"></i></a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="py-16 md:py-24 bg-gray-50 fade-in-section">
-        <div class="container mx-auto px-6 max-w-2xl">
-            <h2 class="text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">Get in Touch</h2>
-            <p class="text-lg text-center text-gray-700 mb-10">
-                I'm always open to new opportunities, collaborations, and interesting discussions. Feel free to reach out!
-            </p>
-            <form class="bg-white p-8 rounded-2xl shadow-xl border border-gray-200">
-                <div class="mb-6">
-                    <label for="name" class="block text-gray-700 text-base font-semibold mb-2">Name</label>
-                    <input type="text" id="name" name="name" class="shadow-sm border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition duration-200" placeholder="Your Full Name">
+        <section id="skills" class="py-16 md:py-24 bg-emerald-100 fade-in-section">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <h2 class="text-3xl sm:text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Skills</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 text-center" id="skills-grid">
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0s;">
+                        <i class="fab fa-react text-4xl text-emerald-500 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">React.js</h3>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.1s;">
+                        <i class="fab fa-node-js text-4xl text-green-600 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Node.js</h3>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.2s;">
+                        <i class="fas fa-database text-4xl text-emerald-600 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Databases</h3>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.3s;">
+                        <i class="fab fa-js-square text-4xl text-yellow-500 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">JavaScript</h3>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.4s;">
+                        <i class="fab fa-html5 text-4xl text-orange-500 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">HTML5</h3>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.5s;">
+                        <i class="fab fa-css3-alt text-4xl text-emerald-400 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">CSS3 & Tailwind</h3>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.6s;">
+                        <i class="fab fa-git-alt text-4xl text-red-600 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">Git & GitHub</h3>
+                    </div>
+                    <div class="bg-emerald-50 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300 transform hover:-translate-y-1 cursor-pointer animate-item-fade-in" style="animation-delay: 0.7s;">
+                        <i class="fas fa-server text-4xl text-gray-600 mb-3"></i>
+                        <h3 class="text-lg font-semibold text-gray-800">API Development</h3>
+                    </div>
                 </div>
-                <div class="mb-6">
-                    <label for="email" class="block text-gray-700 text-base font-semibold mb-2">Email</label>
-                    <input type="email" id="email" name="email" class="shadow-sm border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition duration-200" placeholder="your.email@example.com">
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 md:py-24 bg-emerald-50 fade-in-section">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <h2 class="text-3xl sm:text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="project-card group">
+                        <img src="https://placehold.co/600x400/a7f3d0/4b5563?text=Project+1" alt="Project 1" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition duration-500 ease-in-out">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">E-commerce Platform</h3>
+                            <p class="text-gray-600 mb-4 text-sm">
+                                A full-featured online store built with the MERN stack. Includes secure user authentication, a comprehensive product catalog, shopping cart functionality, and robust order management.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2 py-0.5 rounded-full">React</span>
+                                <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-0.5 rounded-full">Node.js</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-0.5 rounded-full">MongoDB</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-4">
+                                <a href="#" class="text-emerald-600 hover:text-emerald-800 font-semibold transition duration-300 flex items-center text-sm">Live Demo <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-gray-800 transition duration-300 flex items-center text-sm">GitHub <i class="fab fa-github ml-1 text-xs"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card group">
+                        <img src="https://placehold.co/600x400/a7f3d0/4b5563?text=Project+2" alt="Project 2" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition duration-500 ease-in-out">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Real-time Chat App</h3>
+                            <p class="text-gray-600 mb-4 text-sm">
+                                A collaborative task management application enabling users to create, update, and delete tasks with real-time synchronization across devices using WebSockets.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2 py-0.5 rounded-full">React</span>
+                                <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-0.5 rounded-full">Socket.IO</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-0.5 rounded-full">Node.js</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-4">
+                                <a href="#" class="text-emerald-600 hover:text-emerald-800 font-semibold transition duration-300 flex items-center text-sm">Live Demo <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-gray-800 transition duration-300 flex items-center text-sm">GitHub <i class="fab fa-github ml-1 text-xs"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card group">
+                        <img src="https://placehold.co/600x400/a7f3d0/4b5563?text=Project+3" alt="Project 3" class="w-full h-48 object-cover rounded-t-xl group-hover:scale-105 transition duration-500 ease-in-out">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Blog Platform</h3>
+                            <p class="text-gray-600 mb-4 text-sm">
+                                A dynamic blog platform with user authentication, rich text editing, comment sections, and tag-based filtering for posts.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-emerald-100 text-emerald-800 text-xs font-medium px-2 py-0.5 rounded-full">Angular</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-0.5 rounded-full">Express.js</span>
+                                <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-0.5 rounded-full">MongoDB</span>
+                            </div>
+                            <div class="flex justify-between items-center mt-4">
+                                <a href="#" class="text-emerald-600 hover:text-emerald-800 font-semibold transition duration-300 flex items-center text-sm">Live Demo <i class="fas fa-external-link-alt ml-1 text-xs"></i></a>
+                                <a href="#" class="text-gray-600 hover:text-gray-800 transition duration-300 flex items-center text-sm">GitHub <i class="fab fa-github ml-1 text-xs"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="mb-6">
-                    <label for="message" class="block text-gray-700 text-base font-semibold mb-2">Message</label>
-                    <textarea id="message" name="message" rows="7" class="shadow-sm border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition duration-200" placeholder="Type your message here..."></textarea>
-                </div>
-                <div class="flex justify-center">
-                    <button type="submit" class="btn-primary flex items-center">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
-                </div>
-            </form>
-        </div>
-    </section>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-24 bg-emerald-100 fade-in-section">
+            <div class="container mx-auto px-6 max-w-2xl">
+                <h2 class="text-3xl sm:text-4xl text-center mb-12 text-gray-800 section-heading mx-auto">Get in Touch</h2>
+                <p class="text-lg text-center text-gray-700 mb-10">
+                    I'm always open to new opportunities, collaborations, and interesting discussions. Feel free to reach out!
+                </p>
+                <form class="bg-emerald-50 p-8 rounded-2xl shadow-xl border border-emerald-200">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 text-base font-semibold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="shadow-sm border border-emerald-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-200" placeholder="Your Full Name">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 text-base font-semibold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="shadow-sm border border-emerald-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-200" placeholder="your.email@example.com">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-base font-semibold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="7" class="shadow-sm border border-emerald-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition duration-200" placeholder="Type your message here..."></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="btn-primary flex items-center">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <footer class="bg-gray-900 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p class="mb-6 text-gray-400">&copy; 2025 Your Name. All rights reserved.</p>
+            <p class="mb-6 text-gray-400">&copy; 2025 Jasim. All rights reserved.</p>
             <div class="flex justify-center space-x-8">
-                <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300 text-2xl" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300 text-2xl" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300 text-2xl" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300 text-2xl" aria-label="Email Address"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="text-gray-400 hover:text-emerald-400 transition duration-300 text-2xl" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-emerald-400 transition duration-300 text-2xl" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-emerald-400 transition duration-300 text-2xl" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-gray-400 hover:text-emerald-400 transition duration-300 text-2xl" aria-label="Email Address"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </footer>
@@ -607,6 +709,8 @@
                 const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
                 if (mobileMenuToggle && mobileMenuToggle.checked) {
                     mobileMenuToggle.checked = false;
+                    // Remove overflow-y-hidden from body when menu closes
+                    document.body.classList.remove('overflow-y-hidden');
                 }
             });
         });
@@ -615,7 +719,7 @@
         const faders = document.querySelectorAll('.fade-in-section');
 
         const appearOptions = {
-            threshold: 0.2, /* Trigger when 20% of the section is visible */
+            threshold: 0.1, /* Trigger when 10% of the section is visible */
             rootMargin: "0px 0px -50px 0px" /* Adjust to trigger slightly earlier */
         };
 
@@ -709,6 +813,18 @@
                 setTheme('dark');
             }
         });
+
+        // Mobile menu toggle logic
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('change', () => {
+                if (mobileMenuToggle.checked) {
+                    document.body.classList.add('overflow-y-hidden'); /* Prevent scrolling when menu is open */
+                } else {
+                    document.body.classList.remove('overflow-y-hidden');
+                }
+            });
+        }
     </script>
 </body>
 </html>
